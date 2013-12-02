@@ -1,5 +1,4 @@
 ﻿using Assets.Scripts.MyGenericScripts.Framework;
-using Assets.Scripts.MyGenericScripts.Resources;
 using UnityEngine;
 
 namespace Assets.Scripts.MyGenericScripts.Components
@@ -33,8 +32,8 @@ namespace Assets.Scripts.MyGenericScripts.Components
         {
             //todo: code for AI and Player
             //todo: Remove string hardcode
-            _moveDelta.x = Input.GetAxis(InputResource.Horizontal);
-            _moveDelta.y = Input.GetAxis(InputResource.Vertical);
+            _moveDelta.x = Input.GetAxis("Horizontal");
+            _moveDelta.y = Input.GetAxis("Vertical");
 
             MoveHorizontally();
             MoveVertically();
