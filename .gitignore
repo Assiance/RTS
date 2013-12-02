@@ -1,0 +1,15 @@
+*.csproj
+*.pidb
+*.sln
+*.userprefs
+*.suo
+*.user
+*.cache
+*.Cache
+Library
+Temp
+RTS/obj/Debug/UnityVS.RTS.CSharp.csproj.FileListAbsolute.txt
+_ReSharper.*
+*.resharper
+Assets/-tk2d
+Assets/Resources/tk2d/*
