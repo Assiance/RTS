@@ -1,0 +1,9 @@
+C:\Users\Bradford\Documents\Prodigy\Unity3d-Base\BaseApp\Temp\UnityVS_bin\Debug\Assembly-CSharp.dll
+C:\Users\Bradford\Documents\Prodigy\Unity3d-Base\BaseApp\Temp\UnityVS_bin\Debug\Assembly-CSharp.pdb
+C:\Users\Bradford\Documents\Prodigy\Unity3d-Base\BaseApp\Temp\UnityVS_bin\Debug\UnityEditor.dll
+C:\Users\Bradford\Documents\Prodigy\Unity3d-Base\BaseApp\Temp\UnityVS_bin\Debug\UnityEngine.dll
+C:\Users\Bradford\Documents\Prodigy\Unity3d-Base\BaseApp\Temp\UnityVS_bin\Debug\UnityEngine.xml
+C:\Users\Bradford\Documents\Prodigy\Unity3d-Base\BaseApp\Temp\UnityVS_bin\Debug\UnityEditor.xml
+C:\Users\Bradford\Documents\Prodigy\Unity3d-Base\BaseApp\obj\Debug\UnityVS.BaseApp.CSharp.csprojResolveAssemblyReference.cache
+C:\Users\Bradford\Documents\Prodigy\Unity3d-Base\BaseApp\obj\Debug\Assembly-CSharp.dll
+C:\Users\Bradford\Documents\Prodigy\Unity3d-Base\BaseApp\obj\Debug\Assembly-CSharp.pdb
