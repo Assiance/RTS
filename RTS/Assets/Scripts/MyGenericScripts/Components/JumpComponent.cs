@@ -19,8 +19,8 @@ namespace Assets.Scripts.MyGenericScripts.Components
         protected void OnEnable()
         {
             //Todo: find out what is the appropiate place to put this event awake, on enable or start?
-            KeyboardEventManager.instance.RegisterKeyDown(KeyCode.Space, OnJump);
-            KeyboardEventManager.instance.RegisterKeyUp(KeyCode.Space, OnApplyFallSpeed);
+            KeyboardEventManager.Instance.RegisterKeyDown(KeyCode.Space, OnJump);
+            KeyboardEventManager.Instance.RegisterKeyUp(KeyCode.Space, OnApplyFallSpeed);
             _cachedRigidBody = GetComponent<Rigidbody2D>();
         }
 

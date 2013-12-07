@@ -3,114 +3,116 @@ using System.Collections.Generic;
 
 namespace Assets.Scripts.MyGenericScripts.Services
 {
-    public delegate void KeyEvent(KeyCode K);
+    public delegate void KeyEvent(KeyCode keyCode);
 
     public class KeyboardEventManager : MonoBehaviour
     {
         #region Singleton
 
-        private static KeyboardEventManager m_Instance;
+        private static KeyboardEventManager _instance;
 
-        public static KeyboardEventManager instance
+        public static KeyboardEventManager Instance
         {
             get
             {
-                if (m_Instance == null)
+                if (_instance == null)
                 {
-                    m_Instance = FindObjectOfType(typeof (KeyboardEventManager)) as KeyboardEventManager;
+                    _instance = FindObjectOfType(typeof (KeyboardEventManager)) as KeyboardEventManager;
 
-                    if (m_Instance == null)
+                    if (_instance == null)
                     {
-                        m_Instance = new GameObject("KeyboardEventManager Temporary Instance", typeof (KeyboardEventManager)).GetComponent<KeyboardEventManager>();
+                        _instance = new GameObject("KeyboardEventManager Temporary Instance", typeof (KeyboardEventManager)).GetComponent<KeyboardEventManager>();
                     }
 
-                    m_Instance.Init();
+                    _instance.Init();
                 }
-                return m_Instance;
+
+                return _instance;
             }
         }
 
-        private void Awake()
+        protected void Awake()
         {
-            if (m_Instance == null)
+            if (_instance == null)
             {
-                m_Instance = this;
-                m_Instance.Init();
+                _instance = this;
+                _instance.Init();
             }
         }
 
         #endregion
 
-        private List<KeyCode> keys;
-        private Dictionary<KeyCode, KeyEvent> keyDownEvents, keyUpEvents;
+        private List<KeyCode> _keys;
+        private Dictionary<KeyCode, KeyEvent> _keyDownEvents;
+        private Dictionary<KeyCode, KeyEvent> _keyUpEvents;
 
         private void Init()
         {
-            keyDownEvents = new Dictionary<KeyCode, KeyEvent>();
-            keyUpEvents = new Dictionary<KeyCode, KeyEvent>();
-            keys = new List<KeyCode>();
+            _keyDownEvents = new Dictionary<KeyCode, KeyEvent>();
+            _keyUpEvents = new Dictionary<KeyCode, KeyEvent>();
+            _keys = new List<KeyCode>();
         }
 
         #region Registration
 
-        public void RegisterKeyDown(KeyCode K, KeyEvent kEvent)
+        public void RegisterKeyDown(KeyCode keyCode, KeyEvent keyEvent)
         {
-            if (keyDownEvents.ContainsKey(K))
-                keyDownEvents[K] += kEvent;
+            if (_keyDownEvents.ContainsKey(keyCode))
+                _keyDownEvents[keyCode] += keyEvent;
             else
             {
-                if (!keys.Contains(K)) keys.Add(K);
-                keyDownEvents.Add(K, kEvent);
+                if (!_keys.Contains(keyCode)) _keys.Add(keyCode);
+                _keyDownEvents.Add(keyCode, keyEvent);
             }
         }
 
-        public void RegisterKeyUp(KeyCode K, KeyEvent kEvent)
+        public void RegisterKeyUp(KeyCode keyCode, KeyEvent keyEvent)
         {
-            if (keyUpEvents.ContainsKey(K))
-                keyUpEvents[K] += kEvent;
+            if (_keyUpEvents.ContainsKey(keyCode))
+                _keyUpEvents[keyCode] += keyEvent;
             else
             {
-                if (!keys.Contains(K)) keys.Add(K);
-                keyUpEvents.Add(K, kEvent);
+                if (!_keys.Contains(keyCode)) _keys.Add(keyCode);
+                _keyUpEvents.Add(keyCode, keyEvent);
             }
         }
 
-        public void UnregisterKeyDown(KeyCode K, KeyEvent kEvent, bool removeKey)
+        public void UnregisterKeyDown(KeyCode keyCode, KeyEvent keyEvent, bool removeKey)
         {
-            if (keyDownEvents.ContainsKey(K))
+            if (_keyDownEvents.ContainsKey(keyCode))
             {
-                keyDownEvents[K] -= kEvent;
-                if (keyDownEvents[K] == null)
-                    keyDownEvents.Remove(K);
+                _keyDownEvents[keyCode] -= keyEvent;
+                if (_keyDownEvents[keyCode] == null)
+                    _keyDownEvents.Remove(keyCode);
             }
-            if (removeKey) RemoveKey(K);
+            if (removeKey) RemoveKey(keyCode);
         }
 
-        public void UnregisterKeyUp(KeyCode K, KeyEvent kEvent, bool removeKey)
+        public void UnregisterKeyUp(KeyCode keyCode, KeyEvent keyEvent, bool removeKey)
         {
-            if (keyUpEvents.ContainsKey(K))
+            if (_keyUpEvents.ContainsKey(keyCode))
             {
-                keyUpEvents[K] -= kEvent;
-                if (keyUpEvents[K] == null)
-                    keyUpEvents.Remove(K);
+                _keyUpEvents[keyCode] -= keyEvent;
+                if (_keyUpEvents[keyCode] == null)
+                    _keyUpEvents.Remove(keyCode);
             }
-            if (removeKey) RemoveKey(K);
+            if (removeKey) RemoveKey(keyCode);
         }
 
-        public void RemoveKey(KeyCode K)
+        public void RemoveKey(KeyCode keyCode)
         {
-            if (keyDownEvents.ContainsKey(K)) keyDownEvents.Remove(K);
-            if (keyUpEvents.ContainsKey(K)) keyUpEvents.Remove(K);
-            if (keys.Contains(K)) keys.Remove(K);
+            if (_keyDownEvents.ContainsKey(keyCode)) _keyDownEvents.Remove(keyCode);
+            if (_keyUpEvents.ContainsKey(keyCode)) _keyUpEvents.Remove(keyCode);
+            if (_keys.Contains(keyCode)) _keys.Remove(keyCode);
         }
 
         #endregion
 
         #region Key detection
 
-        private void Update()
+        protected void Update()
         {
-            foreach (KeyCode key in keys)
+            foreach (KeyCode key in _keys)
             {
                 if (Input.GetKeyDown(key))
                     OnKeyDown(key);
@@ -120,20 +122,24 @@ namespace Assets.Scripts.MyGenericScripts.Services
             }
         }
 
-        private void OnKeyDown(KeyCode K)
+        private void OnKeyDown(KeyCode keyCode)
         {
-            KeyEvent E = null;
-            if (keyDownEvents.TryGetValue(K, out E))
-                if (E != null)
-                    E(K);
+            KeyEvent keyEvent;
+            if (_keyDownEvents.TryGetValue(keyCode, out keyEvent))
+            {
+                if (keyEvent != null)
+                    keyEvent(keyCode);
+            }
         }
 
-        private void OnKeyUp(KeyCode K)
+        private void OnKeyUp(KeyCode keyCode)
         {
-            KeyEvent E = null;
-            if (keyUpEvents.TryGetValue(K, out E))
-                if (E != null)
-                    E(K);
+            KeyEvent keyEvent;
+            if (_keyUpEvents.TryGetValue(keyCode, out keyEvent))
+            {
+                if (keyEvent != null)
+                    keyEvent(keyCode);
+            }
         }
 
         #endregion

@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Assets.Scripts.MyGenericScripts.Framework
+﻿namespace Assets.Scripts.MyGenericScripts.Framework
 {
-    public abstract class GameObjectProperty : ProdigyMonoBehaviour 
+    public abstract class MainGameObjectComponent : ProdigyMonoBehaviour 
     {
         protected void OnEnable()
         {

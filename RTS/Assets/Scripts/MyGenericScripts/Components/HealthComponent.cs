@@ -47,7 +47,10 @@ namespace Assets.Scripts.MyGenericScripts.Components
         private void CreateHealthBarParentContainer()
         {
             var container = GameObject.Find("HealthBar Container");
-            container = container ?? new GameObject("HealthBar Container");
+
+            if (container == null)
+                container = new GameObject("HealthBar Container");
+
             _healthBar.gameObject.transform.parent = container.transform;
         }
 
@@ -57,7 +60,7 @@ namespace Assets.Scripts.MyGenericScripts.Components
             _healthBar.transform.rotation = _initialHealthBarRotation;
         }
 
-        public void TakeDamage(int damage)
+        public void TakeDamage(float damage)
         {
             CurrentHealth -= damage;
             UpdateHealthBar();
