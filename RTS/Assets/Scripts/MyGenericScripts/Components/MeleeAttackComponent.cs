@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.MyGenericScripts.Components
 {
-    public class MeleeAttackComponent : ProdigyMonoBehaviour
+    public class MeleeAttackComponent : ProdigyMonoBehaviour, IAttack
     {
         public float AttackStrength = 10.0f;
 
@@ -25,6 +25,9 @@ namespace Assets.Scripts.MyGenericScripts.Components
             {
                 var hitComponents = attackableObjects.GetComponents(typeof(IHittable));
               
+                if (hitComponents == null)
+                    return;
+
                 foreach (var hitComponent in hitComponents)
                 {
                     ((IHittable)hitComponent).Hit(this);
@@ -42,6 +45,11 @@ namespace Assets.Scripts.MyGenericScripts.Components
         {
             _objectsInAttackRange = _objectsInAttackRange.Distinct().ToList();
             _objectsInAttackRange.Remove(other.gameObject);
+        }
+
+        public float Damage()
+        {
+            return AttackStrength;
         }
     }
 }

@@ -4,6 +4,6 @@ namespace Assets.Scripts.MyGenericScripts.Components.Interfaces
 {
     public interface IHittable
     {
-        void Hit(MeleeAttackComponent hitter);
+        void Hit(IAttack hitter);
     }
 }

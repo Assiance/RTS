@@ -14,9 +14,9 @@ namespace Assets.Scripts.MyGenericScripts.Components
             _healthComponent = GetComponent<HealthComponent>();
         }
 
-        public void Hit(MeleeAttackComponent hitter)
+        public void Hit(IAttack hitter)
         {
-            _healthComponent.TakeDamage(hitter.AttackStrength);
+            _healthComponent.TakeDamage(hitter.Damage());
         }
     }
 }
