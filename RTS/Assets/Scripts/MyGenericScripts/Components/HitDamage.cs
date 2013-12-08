@@ -8,15 +8,22 @@ namespace Assets.Scripts.MyGenericScripts.Components
     public class HitDamage : ProdigyMonoBehaviour, IHittable
     {
         private Health _healthComponent;
+        private IKillable _killable;
 
         protected void OnEnable()
         {
             _healthComponent = GetComponent<Health>();
+            _killable = GetComponent(typeof (IKillable)) as IKillable;
         }
 
         public void Hit(IAttack hitter)
         {
             _healthComponent.TakeDamage(hitter.Damage());
+
+            if (_healthComponent.CurrentHealth <= 0)
+            {
+                _killable.Kill();
+            }
         }
     }
 }
