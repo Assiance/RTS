@@ -4,9 +4,9 @@ C:\Users\Bradford\Documents\Prodigy\RTS\RTS\Temp\UnityVS_bin\Debug\SyntaxTree.Vi
 C:\Users\Bradford\Documents\Prodigy\RTS\RTS\Temp\UnityVS_bin\Debug\SyntaxTree.VisualStudio.Unity.Messaging.dll
 C:\Users\Bradford\Documents\Prodigy\RTS\RTS\Temp\UnityVS_bin\Debug\UnityEditor.dll
 C:\Users\Bradford\Documents\Prodigy\RTS\RTS\Temp\UnityVS_bin\Debug\UnityEngine.dll
-C:\Users\Bradford\Documents\Prodigy\RTS\RTS\Temp\UnityVS_bin\Debug\Assembly-CSharp.pdb
 C:\Users\Bradford\Documents\Prodigy\RTS\RTS\Temp\UnityVS_bin\Debug\UnityEngine.xml
 C:\Users\Bradford\Documents\Prodigy\RTS\RTS\Temp\UnityVS_bin\Debug\UnityEditor.xml
 C:\Users\Bradford\Documents\Prodigy\RTS\RTS\obj\Debug\UnityVS.RTS.CSharp.Editor.csprojResolveAssemblyReference.cache
 C:\Users\Bradford\Documents\Prodigy\RTS\RTS\obj\Debug\Assembly-CSharp-Editor.dll
 C:\Users\Bradford\Documents\Prodigy\RTS\RTS\obj\Debug\Assembly-CSharp-Editor.pdb
+C:\Users\Bradford\Documents\Prodigy\RTS\RTS\Temp\UnityVS_bin\Debug\Assembly-CSharp.pdb

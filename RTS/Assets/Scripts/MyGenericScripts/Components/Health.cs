@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.MyGenericScripts.Components
 {
-    public class HealthComponent : ProdigyMonoBehaviour
+    public class Health : ProdigyMonoBehaviour
     {
         public float MaxHealth = 100f;
         public float CurrentHealth = 100f;

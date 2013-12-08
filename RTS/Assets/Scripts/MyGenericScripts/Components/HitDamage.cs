@@ -4,14 +4,14 @@ using UnityEngine;
 
 namespace Assets.Scripts.MyGenericScripts.Components
 {
-    [RequireComponent(typeof(HealthComponent))]
-    public class HitDamageCompoent : ProdigyMonoBehaviour, IHittable
+    [RequireComponent(typeof(Health))]
+    public class HitDamage : ProdigyMonoBehaviour, IHittable
     {
-        private HealthComponent _healthComponent;
+        private Health _healthComponent;
 
         protected void OnEnable()
         {
-            _healthComponent = GetComponent<HealthComponent>();
+            _healthComponent = GetComponent<Health>();
         }
 
         public void Hit(IAttack hitter)

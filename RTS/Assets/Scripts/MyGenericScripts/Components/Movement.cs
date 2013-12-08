@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.MyGenericScripts.Components
 {
-    public class MoveComponent : ProdigyMonoBehaviour
+    public class Movement : ProdigyMonoBehaviour
     {
         #region Designer Variables
         public float MovementForce = 100f;

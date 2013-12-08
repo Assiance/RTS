@@ -2,12 +2,12 @@
 using System.Linq;
 using Assets.Scripts.MyGenericScripts.Components.Interfaces;
 using Assets.Scripts.MyGenericScripts.Framework;
-using Assets.Scripts.MyGenericScripts.Services;
+using Assets.Scripts.MyGenericScripts.IO;
 using UnityEngine;
 
 namespace Assets.Scripts.MyGenericScripts.Components
 {
-    public class MeleeAttackComponent : ProdigyMonoBehaviour, IAttack
+    public class MeleeAttack : ProdigyMonoBehaviour, IAttack
     {
         public float AttackStrength = 10.0f;
 

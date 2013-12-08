@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-namespace Assets.Scripts.MyGenericScripts.Services
+namespace Assets.Scripts.MyGenericScripts.IO
 {
     public delegate void KeyEvent(KeyCode keyCode);
 

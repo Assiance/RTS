@@ -1,6 +1,6 @@
 ﻿namespace Assets.Scripts.MyGenericScripts.Framework
 {
-    public abstract class MainGameObjectComponent : ProdigyMonoBehaviour 
+    public abstract class MainGameObjectBehaviour : ProdigyMonoBehaviour 
     {
         protected void OnEnable()
         {

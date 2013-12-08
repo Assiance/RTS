@@ -1,10 +1,10 @@
 ﻿using Assets.Scripts.MyGenericScripts.Framework;
-using Assets.Scripts.MyGenericScripts.Services;
+using Assets.Scripts.MyGenericScripts.IO;
 using UnityEngine;
 
 namespace Assets.Scripts.MyGenericScripts.Components
 {
-    public class JumpComponent : ProdigyMonoBehaviour
+    public class Jump : ProdigyMonoBehaviour
     {
         #region Designer Variables
         public float JumpStrength = 10.0f;
@@ -24,7 +24,7 @@ namespace Assets.Scripts.MyGenericScripts.Components
             _cachedRigidBody = GetComponent<Rigidbody2D>();
         }
 
-        public void Jump()
+        public void InvokeJump()
         {
             OnJump(KeyCode.None);
         }
