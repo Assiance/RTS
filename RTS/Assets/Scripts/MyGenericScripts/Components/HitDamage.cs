@@ -7,6 +7,8 @@ namespace Assets.Scripts.MyGenericScripts.Components
     [RequireComponent(typeof(Health))]
     public class HitDamage : ProdigyMonoBehaviour, IHittable
     {
+        //HasTakenDamage delegate action
+        //HasDied delegate action
         private Health _healthComponent;
         private IKillable _killable;
 
