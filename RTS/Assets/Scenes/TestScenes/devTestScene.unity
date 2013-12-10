@@ -628,6 +628,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: 029c3facd06ab8c41a0154836d034e71, type: 2}
+      propertyPath: MaxHealth
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 029c3facd06ab8c41a0154836d034e71, type: 2}
   m_RootGameObject: {fileID: 395734745}

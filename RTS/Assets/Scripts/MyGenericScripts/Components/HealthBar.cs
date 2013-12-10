@@ -42,7 +42,7 @@ namespace Assets.Scripts.MyGenericScripts.Components
             _healthBar.transform.localPosition = Vector3.zero + HealthBarOffset;
             _initialHealthBarRotation = _healthBar.transform.rotation;
 
-            _healthBar.material.color = Color.Lerp(Color.green, Color.red, 1 - _stats.CurrentHealth * 0.01f);
+            UpdateHealthBar();
         }
 
         private void CreateHealthBarParentContainer()
