@@ -7,18 +7,20 @@ namespace Assets.Scripts.MyGameScripts.Framework
     {
         private static GameManager _instance;
 
-        private GameManager()
-        {
-        }
-
         public static GameManager Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    //Todo: This wont work. because gamemanager is monbehaviour
-                    _instance = new GameManager();
+                    _instance = FindObjectOfType(typeof(GameManager)) as GameManager;
+
+                    if (_instance == null)
+                    {
+                        _instance = new GameObject("GameManager Temporary Instance", typeof(GameManager)).GetComponent<GameManager>();
+                    }
+
+                    _instance.Init();
                 }
 
                 return _instance;
@@ -26,6 +28,15 @@ namespace Assets.Scripts.MyGameScripts.Framework
         }
 
         protected void Awake()
+        {
+            if (_instance == null)
+            {
+                _instance = this;
+                _instance.Init();
+            }
+        }
+
+        private void Init()
         {
         }
 

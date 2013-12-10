@@ -3,19 +3,17 @@ using UnityEngine;
 
 namespace Assets.Scripts.MyGenericScripts.Components
 {
+    [RequireComponent(typeof(Stats))]
     public class Movement : ProdigyMonoBehaviour
     {
-        #region Designer Variables
-        public float MovementForce = 100f;
-        public float MaxSpeed = 1f;
-        #endregion
-
+        private Stats _stats;
         private Rigidbody2D _cachedRigidBody;
         private Vector2 _moveDelta;
         private Vector2 _moveClamp;
 
         protected void OnEnable()
         {
+            _stats = GetComponent<Stats>();
             _cachedRigidBody = GetComponent<Rigidbody2D>();
             _moveDelta = new Vector2();
             _moveClamp = new Vector2();
@@ -38,24 +36,24 @@ namespace Assets.Scripts.MyGenericScripts.Components
             MoveHorizontally();
             MoveVertically();
 
-            _moveClamp.x = Mathf.Clamp(_cachedRigidBody.velocity.x, -MaxSpeed, MaxSpeed);
-            _moveClamp.y = Mathf.Clamp(_cachedRigidBody.velocity.y, -MaxSpeed, MaxSpeed);
+            _moveClamp.x = Mathf.Clamp(_cachedRigidBody.velocity.x, -_stats.MaxSpeed, _stats.MaxSpeed);
+            _moveClamp.y = Mathf.Clamp(_cachedRigidBody.velocity.y, -_stats.MaxSpeed, _stats.MaxSpeed);
 
             _cachedRigidBody.velocity = _moveClamp;
         }
 
         private void MoveVertically()
         {
-            var verticalVelocity = _moveDelta.y*_cachedRigidBody.velocity.y;
-            if (verticalVelocity < MaxSpeed)
-                _cachedRigidBody.AddForce(Vector2.up*_moveDelta.y*MovementForce);
+            var verticalVelocity = _moveDelta.y * _cachedRigidBody.velocity.y;
+            if (verticalVelocity < _stats.MaxSpeed)
+                _cachedRigidBody.AddForce(Vector2.up * _moveDelta.y * _stats.MovementForce);
         }
 
         private void MoveHorizontally()
         {
-            var horizontalVelocity = _moveDelta.x*_cachedRigidBody.velocity.x;
-            if (horizontalVelocity < MaxSpeed)
-                _cachedRigidBody.AddForce(Vector2.right*_moveDelta.x*MovementForce);
+            var horizontalVelocity = _moveDelta.x * _cachedRigidBody.velocity.x;
+            if (horizontalVelocity < _stats.MaxSpeed)
+                _cachedRigidBody.AddForce(Vector2.right * _moveDelta.x * _stats.MovementForce);
         }
 
         private void RotateTowardsVelocity()

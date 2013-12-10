@@ -7,15 +7,20 @@ using UnityEngine;
 
 namespace Assets.Scripts.MyGenericScripts.Components
 {
+    [RequireComponent(typeof(Stats))]
     public class MeleeAttack : ProdigyMonoBehaviour, IAttack
     {
-        public float AttackStrength = 10.0f;
+        public GameObject StatsObject;
 
         private List<GameObject> _objectsInAttackRange;
+        private Stats _stats;
 
         protected void OnEnable()
         {
             _objectsInAttackRange = new List<GameObject>();
+
+            _stats = StatsObject == null ? GetComponent<Stats>() : CachedTransform.parent.GetComponent<Stats>();
+
             KeyboardEventManager.Instance.RegisterKeyDown(KeyCode.Space, OnAttack);
         }
 
@@ -24,7 +29,7 @@ namespace Assets.Scripts.MyGenericScripts.Components
             foreach (var attackableObjects in _objectsInAttackRange)
             {
                 var hitComponents = attackableObjects.GetComponents(typeof(IHittable));
-              
+
                 if (hitComponents == null)
                     return;
 
@@ -49,7 +54,7 @@ namespace Assets.Scripts.MyGenericScripts.Components
 
         public float Damage()
         {
-            return AttackStrength;
+            return _stats.AttackStrength;
         }
     }
 }

@@ -3,14 +3,14 @@ using UnityEngine;
 
 namespace Assets.Scripts.MyGenericScripts.Components
 {
-    public class Health : ProdigyMonoBehaviour
+    [RequireComponent(typeof(Stats))]
+    public class HealthBar : ProdigyMonoBehaviour
     {
-        public float MaxHealth = 100f;
-        public float CurrentHealth = 100f;
         public Texture2D HealthBarImage;
         public Vector3 HealthBarOffset = new Vector3(-0.5f, 0.75f, 0f);
         public GameObject ParentObject;
 
+        private Stats _stats;
         private SpriteRenderer _healthBar;
         private Vector3 _healthScale;
         private Quaternion _initialHealthBarRotation;
@@ -18,6 +18,7 @@ namespace Assets.Scripts.MyGenericScripts.Components
 
         protected void OnEnable()
         {
+            _stats = GetComponent<Stats>();
             _initialHealthBarRotation = new Quaternion();
         }
 
@@ -41,7 +42,7 @@ namespace Assets.Scripts.MyGenericScripts.Components
             _healthBar.transform.localPosition = Vector3.zero + HealthBarOffset;
             _initialHealthBarRotation = _healthBar.transform.rotation;
 
-            _healthBar.material.color = Color.Lerp(Color.green, Color.red, 1 - CurrentHealth * 0.01f);
+            _healthBar.material.color = Color.Lerp(Color.green, Color.red, 1 - _stats.CurrentHealth * 0.01f);
         }
 
         private void CreateHealthBarParentContainer()
@@ -60,16 +61,10 @@ namespace Assets.Scripts.MyGenericScripts.Components
             _healthBar.transform.rotation = _initialHealthBarRotation;
         }
 
-        public void TakeDamage(float damage)
-        {
-            CurrentHealth -= damage;
-            UpdateHealthBar();
-        }
-
         public void UpdateHealthBar()
         {
-            _healthBar.material.color = Color.Lerp(Color.green, Color.red, 1 - CurrentHealth * 0.01f);
-            _healthBar.transform.localScale = new Vector3(_healthScale.x * CurrentHealth * 0.01f, 1, 1);
+            _healthBar.material.color = Color.Lerp(Color.green, Color.red, 1 - _stats.CurrentHealth * 0.01f);
+            _healthBar.transform.localScale = new Vector3(_healthScale.x * _stats.CurrentHealth * 0.01f, 1, 1);
         }
     }
 }

@@ -56,10 +56,10 @@ GameObject:
   - 212: {fileID: 21200000}
   - 50: {fileID: 5000000}
   - 61: {fileID: 6100000}
-  - 114: {fileID: 11400004}
+  - 114: {fileID: 11400008}
   - 114: {fileID: 11400002}
+  - 114: {fileID: 11400004}
   - 114: {fileID: 11400006}
-  - 114: {fileID: 11400000}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -76,6 +76,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400008}
   - 61: {fileID: 6100002}
+  - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -184,14 +185,13 @@ MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100006}
+  m_GameObject: {fileID: 100008}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46f58361cebcb1f45a7017af27f4352a, type: 3}
+  m_Script: {fileID: 11500000, guid: e9dc17f0d1271b942846f25cd94654a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementForce: 100
-  MaxSpeed: 10
+  StatsObject: {fileID: 100006}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -203,8 +203,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46f58361cebcb1f45a7017af27f4352a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementForce: 100
-  MaxSpeed: 10
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -213,14 +211,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 100006}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c33f4a73b045a0749bf5a1e20f1e202f, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a21c7b3aff99f144844d2e8a777b3bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 100
-  CurrentHealth: 100
-  HealthBarImage: {fileID: 2800000, guid: 196d5b3e46206e0448b8a8385f420ee1, type: 3}
-  HealthBarOffset: {x: -.5, y: .75, z: 0}
-  ParentObject: {fileID: 0}
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -229,14 +222,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 100006}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c33f4a73b045a0749bf5a1e20f1e202f, type: 3}
+  m_Script: {fileID: 11500000, guid: 1be96c9a1d367fc42be3f116c01db3da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 100
-  CurrentHealth: 100
   HealthBarImage: {fileID: 2800000, guid: 196d5b3e46206e0448b8a8385f420ee1, type: 3}
   HealthBarOffset: {x: -.5, y: .75, z: 0}
   ParentObject: {fileID: 0}
+--- !u!114 &11400008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 988a873f862faf748b5ab97168ae83ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 100
+  AttackStrength: 10
+  MovementForce: 100
+  MaxSpeed: 1
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
