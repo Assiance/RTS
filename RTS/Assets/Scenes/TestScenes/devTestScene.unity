@@ -652,6 +652,8 @@ GameObject:
   - 114: {fileID: 1511480941}
   - 114: {fileID: 1511480942}
   - 114: {fileID: 1511480940}
+  - 82: {fileID: 1511480944}
+  - 114: {fileID: 1511480943}
   m_Layer: 9
   m_Name: Rock
   m_TagString: Untagged
@@ -828,6 +830,76 @@ MonoBehaviour:
   AttackStrength: 10
   MovementForce: 100
   MaxSpeed: 1
+--- !u!114 &1511480943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1511480934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d281a94d0890324287332c14fd98fff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Clip: {fileID: 8300000, guid: fe78846b96717b84bbe3dd731b68e138, type: 3}
+--- !u!82 &1511480944
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1511480934}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &1560002845
 GameObject:
   m_ObjectHideFlags: 0
@@ -1341,6 +1413,7 @@ GameObject:
   - 114: {fileID: 2136593107}
   - 114: {fileID: 2136593104}
   - 114: {fileID: 2136593106}
+  - 81: {fileID: 2136593109}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -1467,3 +1540,10 @@ MonoBehaviour:
   AttackStrength: 10
   MovementForce: 100
   MaxSpeed: 1
+--- !u!81 &2136593109
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2136593100}
+  m_Enabled: 1
