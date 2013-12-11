@@ -1,10 +1,10 @@
 ﻿using Assets.Scripts.MyGenericScripts.Framework;
-using Assets.Scripts.MyGenericScripts.Services;
+using Assets.Scripts.MyGenericScripts.IO;
 using UnityEngine;
 
 namespace Assets.Scripts.MyGenericScripts.Components
 {
-    public class JumpComponent : ProdigyMonoBehaviour
+    public class Jump : ProdigyMonoBehaviour
     {
         #region Designer Variables
         public float JumpStrength = 10.0f;
@@ -19,12 +19,12 @@ namespace Assets.Scripts.MyGenericScripts.Components
         protected void OnEnable()
         {
             //Todo: find out what is the appropiate place to put this event awake, on enable or start?
-            KeyboardEventManager.instance.RegisterKeyDown(KeyCode.Space, OnJump);
-            KeyboardEventManager.instance.RegisterKeyUp(KeyCode.Space, OnApplyFallSpeed);
+            KeyboardEventManager.Instance.RegisterKeyDown(KeyCode.Space, OnJump);
+            KeyboardEventManager.Instance.RegisterKeyUp(KeyCode.Space, OnApplyFallSpeed);
             _cachedRigidBody = GetComponent<Rigidbody2D>();
         }
 
-        public void Jump()
+        public void InvokeJump()
         {
             OnJump(KeyCode.None);
         }

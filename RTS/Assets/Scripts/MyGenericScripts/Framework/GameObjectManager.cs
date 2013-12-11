@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.MyGenericScripts.Framework
 {
-    public class GameObjectManager : ProdigyMonoBehaviour
+    public class GameObjectManager
     {
         private static GameObjectManager _instance;
         private static IList<GameObject> _gameObjects;
@@ -12,6 +12,8 @@ namespace Assets.Scripts.MyGenericScripts.Framework
 
         private GameObjectManager()
         {
+            _gameObjects = new List<GameObject>();
+            _entityGameObjects = new List<GameObject>();
         }
 
         public static GameObjectManager Instance
@@ -20,18 +22,11 @@ namespace Assets.Scripts.MyGenericScripts.Framework
             {
                 if (_instance == null)
                 {
-                    //todo: wont actually work because cant use new on monobehaviour
                     _instance = new GameObjectManager();
                 }
 
                 return _instance;
             }
-        }
-
-        protected void OnEnable()
-        {
-            _gameObjects = new List<GameObject>();
-            _entityGameObjects = new List<GameObject>();
         }
 
         public void Add(GameObject theGameObject)

@@ -9,9 +9,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 400002}
   - 212: {fileID: 21200002}
-  - 114: {fileID: 11400002}
   - 50: {fileID: 5000000}
   - 61: {fileID: 6100000}
+  - 114: {fileID: 11400002}
+  - 114: {fileID: 11400000}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -56,6 +57,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: .230000004, y: .170000002}
   m_Center: {x: 0, y: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9dc17f0d1271b942846f25cd94654a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttackStrength: 10
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -64,11 +77,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 100002}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a16525bede9efc747ab4e55aca9d05da, type: 3}
+  m_Script: {fileID: 11500000, guid: c33f4a73b045a0749bf5a1e20f1e202f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementForce: 100
-  MaxSpeed: 5
+  MaxHealth: 100
+  CurrentHealth: 100
+  HealthBarImage: {fileID: 2800000, guid: 196d5b3e46206e0448b8a8385f420ee1, type: 3}
+  HealthBarOffset: {x: -.5, y: .75, z: 0}
+  ParentObject: {fileID: 0}
 --- !u!212 &21200002
 SpriteRenderer:
   m_ObjectHideFlags: 1
