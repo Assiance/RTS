@@ -10,7 +10,7 @@ namespace Assets.Scripts.MyGenericScripts.Components
     [RequireComponent(typeof(Stats))]
     public class MeleeAttack : ProdigyMonoBehaviour, IAttack
     {
-        public GameObject StatsObject;
+        public GameObject StatsScriptObject;
 
         private List<GameObject> _objectsInAttackRange;
         private Stats _stats;
@@ -19,7 +19,7 @@ namespace Assets.Scripts.MyGenericScripts.Components
         {
             _objectsInAttackRange = new List<GameObject>();
 
-            _stats = StatsObject == null ? GetComponent<Stats>() : CachedTransform.parent.GetComponent<Stats>();
+            _stats = StatsScriptObject == null ? GetComponent<Stats>() : CachedTransform.parent.GetComponent<Stats>();
 
             KeyboardEventManager.Instance.RegisterKeyDown(KeyCode.Space, OnAttack);
         }
