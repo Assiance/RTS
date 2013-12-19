@@ -1,6 +1,5 @@
 *.csproj
 *.pidb
-*.sln
 *.userprefs
 *.suo
 *.user
