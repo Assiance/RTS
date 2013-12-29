@@ -6,6 +6,7 @@ namespace Assets.Scripts.MyGenericScripts.Components
     {
         public float MaxHealth = 100f;
         public float AttackStrength = 10f;
+        public float ProjectileStrength = 10f;
         public float MovementForce = 100f;
         public float MaxSpeed = 1f;
         public float CurrentHealth { get; private set; }

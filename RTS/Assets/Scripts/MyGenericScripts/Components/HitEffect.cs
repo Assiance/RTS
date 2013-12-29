@@ -10,7 +10,8 @@ namespace Assets.Scripts.MyGenericScripts.Components
 
         public void Hit(IAttack hitter)
         {
-            Particle.Play();   
+            if (Particle != null)
+                Particle.Play();   
         }
     }
 }
