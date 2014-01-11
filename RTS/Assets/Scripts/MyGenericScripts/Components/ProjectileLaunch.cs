@@ -5,6 +5,7 @@ using UnityEngine;
 namespace Assets.Scripts.MyGenericScripts.Components
 {
     [RequireComponent(typeof(Stats))]
+	[RequireComponent(typeof(AudioSource))]
     public class ProjectileLaunch : ProdigyMonoBehaviour
     {
         public GameObject LaunchNode;

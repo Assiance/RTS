@@ -8,9 +8,11 @@ using UnityEngine;
 namespace Assets.Scripts.MyGenericScripts.Components
 {
     [RequireComponent(typeof(Stats))]
+	[RequireComponent(typeof(AudioSource))]
     public class MeleeAttack : ProdigyMonoBehaviour, IAttack
     {
         public GameObject StatsScriptObject;
+		public AudioClip MeleeClip;
 
         private List<GameObject> _objectsInAttackRange;
         private Stats _stats;
@@ -26,6 +28,9 @@ namespace Assets.Scripts.MyGenericScripts.Components
 
         protected void OnAttack(KeyCode key)
         {
+			if (MeleeClip != null)
+				audio.PlayOneShot(MeleeClip);
+
             foreach (var attackableObjects in _objectsInAttackRange)
             {
                 var hitComponents = attackableObjects.GetComponents(typeof(IHittable));
