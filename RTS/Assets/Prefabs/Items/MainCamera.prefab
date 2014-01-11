@@ -9,9 +9,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 20: {fileID: 2000000}
-  - 114: {fileID: 11400000}
   - 124: {fileID: 12400000}
   - 92: {fileID: 9200000}
+  - 114: {fileID: 11400000}
   m_Layer: 8
   m_Name: MainCameraPerspectiveBack
   m_TagString: MainCamera
@@ -28,9 +28,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 400002}
   - 20: {fileID: 2000002}
-  - 114: {fileID: 11400002}
   - 124: {fileID: 12400002}
   - 92: {fileID: 9200002}
+  - 114: {fileID: 11400002}
   m_Layer: 10
   m_Name: MainCameraPerspectiveFront
   m_TagString: MainCamera
@@ -47,9 +47,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 400004}
   - 20: {fileID: 2000004}
-  - 114: {fileID: 11400004}
   - 124: {fileID: 12400004}
   - 92: {fileID: 9200004}
+  - 114: {fileID: 11400004}
   m_Layer: 9
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -66,9 +66,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 400006}
   - 20: {fileID: 2000006}
-  - 114: {fileID: 11400006}
   - 124: {fileID: 12400006}
   - 92: {fileID: 9200006}
+  - 114: {fileID: 11400006}
   m_Layer: 11
   m_Name: MainCameraPerspectiveMiddle
   m_TagString: MainCamera
@@ -151,6 +151,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_HDR: 0
+  m_OcclusionCulling: 1
 --- !u!20 &2000002
 Camera:
   m_ObjectHideFlags: 1
@@ -179,6 +180,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_HDR: 0
+  m_OcclusionCulling: 1
 --- !u!20 &2000004
 Camera:
   m_ObjectHideFlags: 1
@@ -207,6 +209,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_HDR: 0
+  m_OcclusionCulling: 1
 --- !u!20 &2000006
 Camera:
   m_ObjectHideFlags: 1
@@ -235,6 +238,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_HDR: 0
+  m_OcclusionCulling: 1
 --- !u!92 &9200000
 Behaviour:
   m_ObjectHideFlags: 1
@@ -265,7 +269,7 @@ Behaviour:
   m_Enabled: 1
 --- !u!114 &11400000
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
@@ -311,7 +315,7 @@ MonoBehaviour:
   forceResolution: {x: 1024, y: 768}
 --- !u!114 &11400002
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
@@ -357,7 +361,7 @@ MonoBehaviour:
   forceResolution: {x: 1024, y: 768}
 --- !u!114 &11400004
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
@@ -403,7 +407,7 @@ MonoBehaviour:
   forceResolution: {x: 1024, y: 768}
 --- !u!114 &11400006
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}

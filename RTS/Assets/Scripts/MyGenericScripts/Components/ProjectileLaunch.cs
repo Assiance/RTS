@@ -10,6 +10,7 @@ namespace Assets.Scripts.MyGenericScripts.Components
         public GameObject LaunchNode;
         public GameObject ProjectileObject;
         public AudioClip LaunchClip;
+        public float EnergyCost = 10f;
         public float ProjectileSpeed = 20;
         public bool CanFire = true;
         public float FireRateInSeconds = 1f;
@@ -50,6 +51,7 @@ namespace Assets.Scripts.MyGenericScripts.Components
                 if (LaunchClip != null)
                     audio.PlayOneShot(LaunchClip);
 
+                _stats.DrainEnergy(EnergyCost);
                 _timeElapsedSinceFired = 0f;
                 CanFire = false;
             }
