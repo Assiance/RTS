@@ -9,14 +9,12 @@ namespace Assets.Scripts.MyGenericScripts.Components
         private Stats _stats;
         private Rigidbody2D _cachedRigidBody;
         private Vector2 _moveDelta;
-        private Vector2 _moveClamp;
 
         protected void OnEnable()
         {
             _stats = GetComponent<Stats>();
             _cachedRigidBody = GetComponent<Rigidbody2D>();
             _moveDelta = new Vector2();
-            _moveClamp = new Vector2();
             //Todo: see if its possible to add get axis to the keyboard event manager
         }
 
@@ -36,24 +34,18 @@ namespace Assets.Scripts.MyGenericScripts.Components
             MoveHorizontally();
             MoveVertically();
 
-            _moveClamp.x = Mathf.Clamp(_cachedRigidBody.velocity.x, -_stats.MaxSpeed, _stats.MaxSpeed);
-            _moveClamp.y = Mathf.Clamp(_cachedRigidBody.velocity.y, -_stats.MaxSpeed, _stats.MaxSpeed);
-
-            _cachedRigidBody.velocity = _moveClamp;
-        }
-
-        private void MoveVertically()
-        {
-            var verticalVelocity = _moveDelta.y * _cachedRigidBody.velocity.y;
-            if (verticalVelocity < _stats.MaxSpeed)
-                _cachedRigidBody.AddForce(Vector2.up * _moveDelta.y * _stats.MovementForce);
+			//Will keep object from moving after a collision
+			_cachedRigidBody.angularVelocity = 0f;
         }
 
         private void MoveHorizontally()
         {
-            var horizontalVelocity = _moveDelta.x * _cachedRigidBody.velocity.x;
-            if (horizontalVelocity < _stats.MaxSpeed)
-                _cachedRigidBody.AddForce(Vector2.right * _moveDelta.x * _stats.MovementForce);
+            _cachedRigidBody.velocity = new Vector2(_moveDelta.x * _stats.MaxSpeed, _cachedRigidBody.velocity.y);
+        }
+
+        private void MoveVertically()
+        {
+            _cachedRigidBody.velocity = new Vector2(_cachedRigidBody.velocity.x, _moveDelta.y * _stats.MaxSpeed);
         }
 
         private void RotateTowardsVelocity()
