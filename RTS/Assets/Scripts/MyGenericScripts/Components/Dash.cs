@@ -33,7 +33,9 @@ namespace Assets.Scripts.MyGenericScripts.Components
 
         protected void OnDash(KeyCode key)
         {
-            if (CanDash)
+            bool HasEnergy = _stats.CurrentEnergy >= EnergyCost;
+
+            if (CanDash && HasEnergy)
             {
                 StartCoroutine(InitiateDash());
                 StartCoroutine(DashWait());

@@ -31,7 +31,9 @@ namespace Assets.Scripts.MyGenericScripts.Components
 
         protected void OnLaunch(KeyCode key)
         {
-            if (CanFire)
+            bool HasEnergy = _stats.CurrentEnergy >= EnergyCost;
+
+            if (CanFire && HasEnergy)
             {
                 var projectileClone = Instantiate(ProjectileObject, LaunchNode.transform.position, CachedTransform.rotation) as GameObject;
 
