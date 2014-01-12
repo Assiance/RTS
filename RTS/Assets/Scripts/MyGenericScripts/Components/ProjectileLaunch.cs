@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.MyGenericScripts.Framework;
+﻿using System.Collections;
+using Assets.Scripts.MyGenericScripts.Framework;
 using Assets.Scripts.MyGenericScripts.IO;
 using UnityEngine;
 
@@ -17,7 +18,6 @@ namespace Assets.Scripts.MyGenericScripts.Components
         public float FireRateInSeconds = 1f;
 
         private Stats _stats;
-        private float _timeElapsedSinceFired;
 
         protected void OnEnable()
         {
@@ -27,14 +27,6 @@ namespace Assets.Scripts.MyGenericScripts.Components
                 LaunchNode = this.gameObject;
 
             KeyboardEventManager.Instance.RegisterKeyDown(KeyCode.V, OnLaunch);
-        }
-
-        protected void Update()
-        {
-            if (CanFire == false)
-            {
-                CheckIfCanFire();
-            }
         }
 
         protected void OnLaunch(KeyCode key)
@@ -53,8 +45,7 @@ namespace Assets.Scripts.MyGenericScripts.Components
                     audio.PlayOneShot(LaunchClip);
 
                 _stats.DrainEnergy(EnergyCost);
-                _timeElapsedSinceFired = 0f;
-                CanFire = false;
+                StartCoroutine(ProjectileWait());
             }
         }
 
@@ -72,16 +63,12 @@ namespace Assets.Scripts.MyGenericScripts.Components
                 contactAttack.AttackStrength = _stats.ProjectileStrength;
         }
 
-        private void CheckIfCanFire()
+        IEnumerator ProjectileWait()
         {
-            if (_timeElapsedSinceFired >= FireRateInSeconds)
-            {
-                CanFire = true;
-            }
-            else
-            {
-                _timeElapsedSinceFired += Time.fixedDeltaTime;
-            }
+            CanFire = false;
+
+            yield return new WaitForSeconds(FireRateInSeconds);
+            CanFire = true;
         }
     }
 }

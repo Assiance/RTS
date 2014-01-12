@@ -29,7 +29,8 @@ namespace Assets.Scripts.MyGenericScripts.Components
             CurrentHealth = MaxHealth;
             CurrentEnergy = MaxEnergy;
 
-            InvokeRepeating("RegenerateEnergy", 0f, EnergyRegenerationRate);
+            if (_energyBar != null)
+                InvokeRepeating("RegenerateEnergy", 0f, EnergyRegenerationRate);
         }
 
         public void TakeDamage(float damage)
@@ -56,7 +57,7 @@ namespace Assets.Scripts.MyGenericScripts.Components
                 CurrentEnergy = MaxEnergy;
 
             if (_energyBar != null)
-            _energyBar.UpdateEnergyBar();
+                _energyBar.UpdateEnergyBar();
         }
     }
 }

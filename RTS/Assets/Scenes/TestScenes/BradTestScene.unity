@@ -255,6 +255,7 @@ GameObject:
   - 82: {fileID: 389657997}
   - 81: {fileID: 389658006}
   - 114: {fileID: 389658007}
+  - 114: {fileID: 389658008}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -487,6 +488,24 @@ MonoBehaviour:
   XPosition: 0
   YPosition: 0
   ParentObject: {fileID: 0}
+--- !u!114 &389658008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 389657995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c74fb60868cd51d418bc7437363f39d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DashSpeed: 20
+  DashDurationTime: 1
+  DashParticle: {fileID: 0}
+  EnergyCost: 10
+  DashClip: {fileID: 8300000, guid: a9276256b6176cb43b6c5588d4e72741, type: 3}
+  CanDash: 1
+  DashRate: 5
 --- !u!1 &421356989
 GameObject:
   m_ObjectHideFlags: 0
