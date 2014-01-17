@@ -2,7 +2,7 @@
 using Assets.Scripts.MyGenericScripts.IO;
 using UnityEngine;
 
-namespace Assets.Scripts.MyGenericScripts.Components
+namespace Assets.Scripts.MyGenericScripts.Components.Actions
 {
     public class Jump : ProdigyMonoBehaviour
     {

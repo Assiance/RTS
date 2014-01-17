@@ -1,9 +1,10 @@
 using System.Collections;
+using Assets.Scripts.MyGenericScripts.Components.General;
 using Assets.Scripts.MyGenericScripts.Framework;
 using Assets.Scripts.MyGenericScripts.IO;
 using UnityEngine;
 
-namespace Assets.Scripts.MyGenericScripts.Components
+namespace Assets.Scripts.MyGenericScripts.Components.Actions
 {
     [RequireComponent(typeof(Stats))]
     [RequireComponent(typeof(Movement))]

@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using Assets.Scripts.MyGenericScripts.Components.Interfaces;
 using Assets.Scripts.MyGenericScripts.Framework;
 using System.Linq;
 using UnityEngine;
+using Assets.Scripts.MyGenericScripts.Components.Actions.Interfaces;
 
-namespace Assets.Scripts.MyGenericScripts.Components
+namespace Assets.Scripts.MyGenericScripts.Components.Actions
 {
     public class ContactAttack : ProdigyMonoBehaviour, IAttack
     {

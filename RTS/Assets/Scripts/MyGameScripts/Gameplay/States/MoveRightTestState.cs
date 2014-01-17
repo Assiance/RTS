@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts.MyGameScripts.Gameplay.Controllers;
 using Assets.Scripts.MyGenericScripts.Components;
-using Assets.Scripts.MyGenericScripts.Components.Interfaces;
+using Assets.Scripts.MyGenericScripts.Components.AI;
+using Assets.Scripts.MyGenericScripts.Components.AI.States;
 using UnityEngine;
 
 namespace Assets.Scripts.MyGameScripts.Gameplay.States

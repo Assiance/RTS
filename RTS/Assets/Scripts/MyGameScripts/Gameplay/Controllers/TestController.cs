@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.MyGameScripts.Gameplay.States;
 using Assets.Scripts.MyGenericScripts.Components;
+using Assets.Scripts.MyGenericScripts.Components.AI;
 
 namespace Assets.Scripts.MyGameScripts.Gameplay.Controllers
 {

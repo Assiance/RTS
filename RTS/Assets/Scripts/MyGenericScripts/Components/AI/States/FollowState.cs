@@ -1,15 +1,25 @@
-﻿using Assets.Scripts.MyGameScripts.Gameplay.Controllers;
-using Assets.Scripts.MyGenericScripts.Components;
-using Assets.Scripts.MyGenericScripts.Components.AI;
-using Assets.Scripts.MyGenericScripts.Components.AI.States;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Assets.Scripts.MyGameScripts.Gameplay.Controllers;
+using Assets.Scripts.MyGenericScripts.Components.AI.States.Model;
 using UnityEngine;
 
-namespace Assets.Scripts.MyGameScripts.Gameplay.States
+namespace Assets.Scripts.MyGenericScripts.Components.AI.States
 {
-    public class MoveLeftTestState : FSMState
+    public class FollowState : FSMState
     {
+        GameObject Target;
+
+        public FollowState(FollowStateModel model)
+        {
+            Target = model.Target;
+        }
+
         public override void Init()
         {
+            
         }
 
         public override void Enter()

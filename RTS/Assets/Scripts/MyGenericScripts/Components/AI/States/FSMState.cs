@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Scripts.MyGenericScripts.Components.Interfaces
+namespace Assets.Scripts.MyGenericScripts.Components.AI.States
 {
     public abstract class FSMState
     {

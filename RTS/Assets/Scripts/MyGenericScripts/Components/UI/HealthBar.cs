@@ -1,7 +1,8 @@
-﻿using Assets.Scripts.MyGenericScripts.Framework;
+﻿using Assets.Scripts.MyGenericScripts.Components.General;
+using Assets.Scripts.MyGenericScripts.Framework;
 using UnityEngine;
 
-namespace Assets.Scripts.MyGenericScripts.Components
+namespace Assets.Scripts.MyGenericScripts.Components.UI
 {
     [RequireComponent(typeof(Stats))]
     public class HealthBar : ProdigyMonoBehaviour

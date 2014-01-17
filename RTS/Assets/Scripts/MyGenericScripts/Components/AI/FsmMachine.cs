@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Assets.Scripts.MyGenericScripts.Components.Interfaces;
+using Assets.Scripts.MyGenericScripts.Components.AI.States;
 using Assets.Scripts.MyGenericScripts.Framework;
 using UnityEngine;
 
-namespace Assets.Scripts.MyGenericScripts.Components
+namespace Assets.Scripts.MyGenericScripts.Components.AI
 {
     public enum Transition
     {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Scripts.MyGenericScripts.Components.Interfaces
+namespace Assets.Scripts.MyGenericScripts.Components.Actions.Interfaces
 {
     public interface IHittable
     {

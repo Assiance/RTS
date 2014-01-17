@@ -8,3 +8,4 @@ C:\Users\Raine\Desktop\RTS\RTS\Temp\bin\Debug\Unity.DataContract.dll
 C:\Users\Raine\Desktop\RTS\RTS\Temp\bin\Debug\ICSharpCode.NRefactory.dll
 C:\Users\Raine\Desktop\RTS\RTS\obj\Debug\Assembly-CSharp.dll
 C:\Users\Raine\Desktop\RTS\RTS\obj\Debug\Assembly-CSharp.pdb
+C:\Users\Raine\Desktop\RTS\RTS\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
