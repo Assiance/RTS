@@ -64,8 +64,14 @@ namespace Assets.Scripts.MyGenericScripts.Components.UI
 
         public void UpdateHealthBar()
         {
-            _healthBar.material.color = Color.Lerp(Color.green, Color.red, 1 - _stats.CurrentHealth * 0.01f);
-            _healthBar.transform.localScale = new Vector3(_healthScale.x * _stats.CurrentHealth * 0.01f, 1, 1);
+            if (_stats.CurrentHealth <= 0)
+            {
+                _healthBar.enabled = false;
+                this.enabled = false;
+            }
+
+            _healthBar.material.color = Color.Lerp(Color.green, Color.red, 1 - _stats.CurrentHealth / _stats.MaxHealth);
+            _healthBar.transform.localScale = new Vector3(_stats.CurrentHealth / _stats.MaxHealth, 1, 1);
         }
     }
 }

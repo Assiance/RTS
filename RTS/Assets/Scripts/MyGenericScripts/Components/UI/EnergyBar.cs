@@ -17,7 +17,6 @@ namespace Assets.Scripts.MyGenericScripts.Components.UI
 
         private Stats _stats;
         private SpriteRenderer _energyBar;
-        private Vector3 _energyScale;
         private Quaternion _initialEnergyBarRotation;
 
 
@@ -40,8 +39,6 @@ namespace Assets.Scripts.MyGenericScripts.Components.UI
             {
                 _energyBar.gameObject.transform.parent = ParentObject.transform;
             }
-
-            _energyScale = _energyBar.transform.localScale;
 
             _energyBar.gameObject.transform.position = transform.position + EnergyBarOffset;
             _energyBar.transform.localPosition = Vector3.zero + EnergyBarOffset;
@@ -69,7 +66,7 @@ namespace Assets.Scripts.MyGenericScripts.Components.UI
         public void UpdateEnergyBar()
         {
             _energyBar.material.color = BarColor;
-            _energyBar.transform.localScale = new Vector3(_energyScale.x * _stats.CurrentEnergy * 0.01f, 1, 1);
+            _energyBar.transform.localScale = new Vector3(_stats.CurrentEnergy / _stats.MaxEnergy, 1, 1);
         }
 
         void OnGUI()

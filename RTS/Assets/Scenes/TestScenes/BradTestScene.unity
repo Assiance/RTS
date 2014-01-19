@@ -203,6 +203,10 @@ Prefab:
       propertyPath: FollowTarget
       value: 
       objectReference: {fileID: 389657995}
+    - target: {fileID: 11400008, guid: 7d1ae7e1e0617d74ebde28faad783062, type: 2}
+      propertyPath: MaxHealth
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7d1ae7e1e0617d74ebde28faad783062, type: 2}
   m_RootGameObject: {fileID: 1011736199}
