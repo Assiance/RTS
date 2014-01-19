@@ -11,7 +11,8 @@ namespace Assets.Scripts.MyGenericScripts.Components.AI
     {
         None = 0,
         FarRight,
-        FarLeft
+        FarLeft,
+        TooClose
     }
 
     public class FsmMachine : ProdigyMonoBehaviour

@@ -21,7 +21,7 @@ namespace Assets.Scripts.MyGameScripts.Gameplay.States
             if (npc.transform.position.x >= 25)
             {
                 Debug.Log("Switch to Move Left state");
-                npc.GetComponent<TestController>().SetTransition(Transition.FarRight);
+                npc.GetComponent<EnemyController>().SetTransition(Transition.FarRight);
             }
         }
 
