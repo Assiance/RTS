@@ -31,10 +31,10 @@ namespace Assets.Scripts.MyGenericScripts.Components.AI
             DefaultState = null;
             GoalState = null;
 
-			Initialize();
+			FSMOnEnable();
         }
 
-        protected virtual void Initialize() { }
+        protected virtual void FSMOnEnable() { }
         protected virtual void FSMUpdate() { }
         protected virtual void FSMFixedUpdate() { }
 

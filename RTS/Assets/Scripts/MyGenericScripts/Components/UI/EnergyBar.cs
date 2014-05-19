@@ -8,7 +8,6 @@ namespace Assets.Scripts.MyGenericScripts.Components.UI
     public class EnergyBar : ProdigyMonoBehaviour
     {
         public Texture2D EnergyBarImage;
-        public float RechargeRate;
 		public Color BarColor;
         public Vector3 EnergyBarOffset = new Vector3(-0.5f, 1f, 0f);
         public float XPosition = 0f;

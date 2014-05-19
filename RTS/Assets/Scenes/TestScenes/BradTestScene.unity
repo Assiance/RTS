@@ -207,6 +207,10 @@ Prefab:
       propertyPath: MaxHealth
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 5000000, guid: 7d1ae7e1e0617d74ebde28faad783062, type: 2}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7d1ae7e1e0617d74ebde28faad783062, type: 2}
   m_RootGameObject: {fileID: 1011736199}
@@ -421,6 +425,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46f58361cebcb1f45a7017af27f4352a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsAiControlled: 0
+  ShouldRotate: 1
 --- !u!114 &389658001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -439,8 +445,8 @@ MonoBehaviour:
   ProjectileStrength: 10
   MovementForce: 100
   MaxSpeed: 10
-  EnergyRegenerationRate: 50
-  EnergyRegenerationAmount: 100
+  EnergyRegenerationRate: 10
+  EnergyRegenerationAmount: 10
 --- !u!61 &389658002
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -530,7 +536,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnergyBarImage: {fileID: 2800000, guid: 196d5b3e46206e0448b8a8385f420ee1, type: 3}
-  RechargeRate: 0
   BarColor: {r: .0431372561, g: 0, b: .772549033, a: 1}
   EnergyBarOffset: {x: -.5, y: 1, z: 0}
   XPosition: 0
@@ -1754,11 +1759,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400006, guid: 7b95a24100994944ea95fd007d228878, type: 2}
       propertyPath: EnergyRegenerationRate
-      value: 50
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 11400006, guid: 7b95a24100994944ea95fd007d228878, type: 2}
       propertyPath: EnergyRegenerationAmount
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5000000, guid: 7b95a24100994944ea95fd007d228878, type: 2}
       propertyPath: m_Interpolate
@@ -2128,6 +2133,7 @@ GameObject:
   - 114: {fileID: 1011736206}
   - 114: {fileID: 1011736208}
   - 114: {fileID: 1011736201}
+  - 114: {fileID: 1011736209}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -2181,7 +2187,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_FixedAngle: 0
   m_IsKinematic: 0
   m_Interpolate: 1
@@ -2270,6 +2276,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa3445671d42e82408958c15b3576594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1011736209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1011736199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46f58361cebcb1f45a7017af27f4352a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsAiControlled: 1
+  ShouldRotate: 0
 --- !u!1 &1097043237
 GameObject:
   m_ObjectHideFlags: 0

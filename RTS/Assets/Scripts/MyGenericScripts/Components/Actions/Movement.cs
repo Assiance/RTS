@@ -7,6 +7,9 @@ namespace Assets.Scripts.MyGenericScripts.Components.Actions
     [RequireComponent(typeof(Stats))]
     public class Movement : ProdigyMonoBehaviour
     {
+        public bool IsAiControlled = true;
+        public bool ShouldRotate = true;
+     
         private Stats _stats;
         private Rigidbody2D _cachedRigidBody;
         private Vector2 _moveDelta;
@@ -22,21 +25,36 @@ namespace Assets.Scripts.MyGenericScripts.Components.Actions
         protected void FixedUpdate()
         {
             Move();
-            RotateTowardsVelocity();
+
+            if (ShouldRotate)
+                RotateTowardsVelocity();
         }
 
         protected void Move()
         {
             //todo: code for AI and Player
             //todo: Remove string hardcode
-            _moveDelta.x = Input.GetAxis("Horizontal");
-            _moveDelta.y = Input.GetAxis("Vertical");
+            if (IsAiControlled == false)
+            {
+                SetHorizontalMoveDelta(Input.GetAxis("Horizontal"));
+                SetVerticalMoveDelta(Input.GetAxis("Vertical"));   
+            }
 
             MoveHorizontally();
             MoveVertically();
 
 			//Will keep object from moving after a collision
 			_cachedRigidBody.angularVelocity = 0f;
+        }
+
+        public void SetHorizontalMoveDelta(float horizontalInput)
+        {
+            _moveDelta.x = horizontalInput;
+        }
+
+        public void SetVerticalMoveDelta(float verticalInput)
+        {
+            _moveDelta.y = verticalInput;
         }
 
         private void MoveHorizontally()

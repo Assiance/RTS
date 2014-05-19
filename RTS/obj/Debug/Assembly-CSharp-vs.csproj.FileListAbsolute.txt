@@ -8,3 +8,4 @@ C:\Users\Bradford\Documents\Prodigy\RTS\RTS\Temp\bin\Debug\nunit.framework.dll
 C:\Users\Bradford\Documents\Prodigy\RTS\RTS\Temp\bin\Debug\Unity.DataContract.dll
 C:\Users\Bradford\Documents\Prodigy\RTS\RTS\Temp\bin\Debug\ICSharpCode.NRefactory.dll
 C:\Users\Bradford\Documents\Prodigy\RTS\RTS\obj\Debug\Assembly-CSharp.pdb
+C:\Users\Bradford\Documents\Prodigy\RTS\RTS\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache

@@ -5,11 +5,11 @@ namespace Assets.Scripts.MyGenericScripts.Components.AI.States
 {
     public class FollowState : FSMState
     {
-        GameObject Target;
+        FollowStateModel Model { get; set; }
 
         public FollowState(FollowStateModel model)
         {
-            Target = model.Target;
+            Model = model;
         }
 
         public override void Init()
@@ -32,21 +32,17 @@ namespace Assets.Scripts.MyGenericScripts.Components.AI.States
 
         public override void UpdateState(Transform npc)
         {
-            var speed = new Vector2();
+            if (Model.Target.transform.position.x > npc.position.x)
+                Model.MovementComponent.SetHorizontalMoveDelta(1);
 
-            if (Target.transform.position.x > npc.position.x)
-                speed.x = 1;
+            if (Model.Target.transform.position.x < npc.position.x)
+                Model.MovementComponent.SetHorizontalMoveDelta(-1);
 
-            if (Target.transform.position.x < npc.position.x)
-                speed.x = -1;
+            if (Model.Target.transform.position.y > npc.position.y)
+                Model.MovementComponent.SetVerticalMoveDelta(1);
 
-            if (Target.transform.position.y > npc.position.y)
-                speed.y = 1;
-
-            if (Target.transform.position.y < npc.position.y)
-                speed.y = -1;
-
-            npc.rigidbody2D.velocity = speed;
+            if (Model.Target.transform.position.y < npc.position.y)
+                Model.MovementComponent.SetVerticalMoveDelta(-1);
         }
 
         public override void Exit()
